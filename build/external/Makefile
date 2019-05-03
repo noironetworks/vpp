@@ -113,7 +113,7 @@ $(DEV_RPM): Makefile rpm/vpp-ext-deps.spec
 	  --define "_version $(RPM_VER)" \
 	  --define "_release $(PKG_SUFFIX)" \
 	  $(CURDIR)/rpm/vpp-ext-deps.spec
-	mv rpm/RPMS/$(RPM_ARCH)/*.rpm .
+	mv rpm/RPMS/*.rpm .
 	@git clean -fdx rpm
 
 build-rpm: $(DEV_RPM)
