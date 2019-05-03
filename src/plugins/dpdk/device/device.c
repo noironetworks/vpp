@@ -112,7 +112,7 @@ dpdk_validate_rte_mbuf (vlib_main_t * vm, vlib_buffer_t * b,
       b = vlib_get_buffer (vm, b->next_buffer);
       mb = rte_mbuf_from_vlib_buffer (b);
       if (PREDICT_FALSE ((b->flags & VLIB_BUFFER_EXT_HDR_VALID) == 0))
-	rte_pktmbuf_reset (mb);
+       rte_pktmbuf_reset (mb);
       last_mb->next = mb;
       last_mb = mb;
       mb->data_len = b->current_length;
